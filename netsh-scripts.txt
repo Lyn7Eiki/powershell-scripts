@@ -1,0 +1,8 @@
+显示连接的WiFi名
+netsh
+$wifi_name = ( netsh wlan show interface | Where-Object {$_ -match "[^B]SSID*"} ).replace(' ', '').replace('SSID:','')
+# .replace('SSID:','WiFi名：')
+
+显示连接的WiFi密码
+$wifi_pwd = ( netsh wlan show profile $wifi_name key=clear | Where-Object {$_ -match "关键内容*"} ).replace(' ', '').replace('关键内容:','')
+
