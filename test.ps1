@@ -1,4 +1,4 @@
-﻿cls
+cls
 # $x = read-host -Prompt "x"
 # $y = read-host -Prompt "y"
 # $z = [int]$x + [int]$y
@@ -16,15 +16,15 @@ write-host "7、紫"
 $i = read-host -prompt ">"
 
 write-host "哦你喜欢" -nonewline
-if ($i -eq 1) { write-host "红色！"
-} else { if ($i -eq 2) { write-host "橙色！"
-    } else { if ($i -eq 3) { write-host "黄色！"
-        } else { if ($i -eq 4) { write-host "绿色！"
-            } else { if ($i -eq 5) { write-host "青色！"
-                } else { if ($i -eq 6) { write-host "蓝色！"
-                   } else { write-host "紫色！" }
-                }
-            }
-        }
-    }
+
+switch($i) {
+    1 { $color = "红色"; break }
+    2 { $color = "橙色"; break }
+    3 { $color = "黄色"; break }
+    4 { $color = "绿色"; break }
+    5 { $color = "青色"; break }
+    6 { $color = "蓝色"; break }
+    7 { $color = "紫色"; break }
 }
+
+write-host "${color}！"
